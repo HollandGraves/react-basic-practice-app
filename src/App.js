@@ -13,7 +13,17 @@ class App extends Component {
   }
 
   switchNameHandler = () => {
-      console.log('Was Clicked!');
+    // console.log('Was Clicked!');
+    this.setState(
+      {
+        persons: [
+          { name: 'Matthew Matias', gender: 'male' },
+          { name: 'Legolas the Archer', gender: 'male' },
+          { name: 'Dustin Higginbotham', gender: 'male' },
+          { name: 'Katherine Higginbotham', gender: 'female' }
+        ]
+      }
+    )
   }
 
   render() {
@@ -24,7 +34,7 @@ class App extends Component {
         <Person name={this.state.persons[0].name} gender={this.state.persons[0].gender}/>
         <Person name={this.state.persons[1].name} gender={this.state.persons[1].gender}/>
         <Person name={this.state.persons[2].name} gender={this.state.persons[2].gender}/>
-        <Person>
+        <Person name={this.state.persons[3].name} gender={this.state.persons[3].gender}>
           This is the text that is passed in through props.children or this.props.children
           <br/>
           (this props used depends on if the JSX-html tag comes from a stateless Component or a stateful Component, respectively)
